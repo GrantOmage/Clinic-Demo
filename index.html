@@ -49,9 +49,14 @@
   /* HERO */
   .hero{
     padding:88px 0 64px;
+  }
+  .hero-inner{
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
   }
-  @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:56px;}}
+  @media(max-width:900px){
+    .hero{padding-top:56px;}
+    .hero-inner{grid-template-columns:1fr;gap:36px;}
+  }
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
@@ -92,8 +97,9 @@
     border-radius:50%;background:radial-gradient(circle,rgba(224,113,75,0.35),transparent 70%);
   }
   .panel-quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;line-height:1.4;position:relative;z-index:1;}
-  .panel-meta{display:flex;gap:16px;align-items:center;font-size:0.85rem;position:relative;z-index:1;}
-  .avatar-row{display:flex;}
+  .panel-meta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;font-size:0.85rem;position:relative;z-index:1;}
+  .panel-meta span{min-width:0;flex:1 1 180px;}
+  .avatar-row{display:flex;flex-shrink:0;}
   .avatar{width:34px;height:34px;border-radius:50%;background:var(--sage);border:2px solid var(--teal);margin-left:-10px;}
   .avatar:first-child{margin-left:0;}
 
@@ -168,7 +174,7 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;">
+  <div class="wrap hero-inner">
     <div>
       <div class="eyebrow">Now accepting new patients</div>
       <h1>Healthcare that feels like <em>someone's actually listening.</em></h1>
@@ -291,4 +297,5 @@
 </footer>
 
 </body>
-</html>
+  </html>
+  
